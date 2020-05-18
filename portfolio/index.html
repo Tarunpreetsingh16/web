@@ -20,14 +20,26 @@
     <header class="landingHero">
         <nav>
             <ul class="navBar">
-                <li class="navBarItems"><a href="#">Home</a></li> 
+                <li class="navBarItems"><a href="index.html">Home</a></li> 
                 <li class="navBarItems"><a href="#">Projects</a></li> 
                 <li class="navBarItems"><a href="#">Skills</a></li> 
                 <li class="navBarItems"><a href="#">About</a></li> 
                 <li class="navBarItems"><a href="#">Connect</a></li> 
             </ul>
         </nav>  
-        <img src="images/heroSectionLanding.png">
+        <div id="mobileNav">
+            <nav>
+                <ul id="mobileNavBar">
+                    <li class="navBarItems"><a href="index.html">Home</a></li> 
+                    <li class="navBarItems"><a href="#">Projects</a></li> 
+                    <li class="navBarItems"><a href="#">Skills</a></li> 
+                    <li class="navBarItems"><a href="#">About</a></li> 
+                    <li class="navBarItems"><a href="#">Connect</a></li> 
+                </ul>
+            </nav>
+            <img id="hamburger" src="icons/hamburger.png" onclick="toggleMenu()">
+        </div>
+        <img id="heroImage" src="images/heroSectionLanding.png">
         <button>FIND OUT</button>
     </header>   
     <main>
@@ -56,5 +68,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
