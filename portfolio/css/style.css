@@ -17,22 +17,30 @@ header{
     width: 100%;
     height:auto;
 }
-.landingHero img{
+#heroImage{
     width: 100%;
     height: auto;
     position: relative;
     background-attachment: fixed;
     background-color: black;
 }
-nav{
-   background-color: #000000; 
+#desktopNav{
     width: 100%;
+    background-color: black;
+}
+nav{
+    background-color: #c91c7c; 
+    width: 60.9%;
+    float: left;
+    text-align: left;
+}
+.navBar{
+    margin-left: 200px;
 }
 .navBarItems{
     display: inline-block;
     padding: 1rem;
 }
-
 .navBarItems a{
     color: white;
     text-decoration: none;
@@ -40,16 +48,28 @@ nav{
     font-weight: bold;
     text-transform: uppercase;
 }
+.landingHero h2{
+    position: absolute;
+    color: white;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 5rem;
+    font-weight: 100;
+    left: 0;
+    transform: scale(1,1.2) translate(200px,-80px);
+    
+}
 header button{
     position: absolute;
-    transform: translate(0,250px);
+    left: 0;
+    transform: translate(200px,250px);
     background-color: black;
-    padding:0.2rem 5rem;
-    border: 0.1rem solid orange;
-    border-radius:10px;
+    padding:0.8rem 8rem;
+    border-radius:5px;
     color: white;
+    border:none;
     font-size: 1rem;
-    font-weight: ;
     letter-spacing: 0.2rem;
 }
 .portfolioPages{
@@ -60,8 +80,12 @@ header button{
 }
 #mobileNav{
     width: 100%;
-    background-color: black;
+    background-color: black; 
     display: none;
+}
+#mobileNav nav{
+    background-color: black;
+    text-align: center
 }
 #mobileNavBar{
     display: none;
@@ -86,7 +110,8 @@ header button{
 .portfolioPages ul li{
     display: inline-block;
     text-align: center;
-    
+    opacity: 0;
+    transition: 2s all;
 }
 .portfolioPages ul li a {
     color:black;
@@ -109,12 +134,137 @@ header button{
 .opacity{
     opacity: 0;
 }
-/*media queries*/
-@media only screen and (max-width:992px){
+/********css for glimpse part of the homepage**********/
+#sectionTitle{
+    margin: 3rem 0;
+    text-transform: uppercase;
+    text-align: center;
+    opacity:0;
+    transition:1s all ease-in;
+    background-color: black;
+    padding: 1rem;
+    color: white;
+}
+.glimpse{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
     
-    header button{
-        transform: translate(0, 200px);
+}
+.glimpse:last-child{
+    flex-direction: row-reverse;
+}
+.glimpseImage{
+    width: 50%;
+    height: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.glimpseImage img{
+    transform: scale(0.8);
+    opacity:0;
+}
+.content{
+    text-align: center;
+    width: 50%;
+    vertical-align: baseline;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+}
+.content p{
+    width:50%;
+    font-size: 1.5rem;
+    margin:2rem auto;
+}
+.content h2{
+    font-size: 2rem;
+}
+/***animations****/
+@keyframes fromLeft{
+    0%{
+        transform: translateX(-1000px);
+        opacity:0;
     }
+    100%{
+        transform: translateX(0px);
+        opacity:1;
+    }
+}
+@keyframes fromRight{
+    0%{
+        transform: translateX(+1000px);
+        opacity:0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity:1;
+    }
+}
+@keyframes fromBottom{
+    0%{
+        transform: translateY(+100px);
+        opacity:0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*******Animation for scrollmagic ***********/
+.showTitle{
+    opacity:1 !important;
+}
+.fadeInUp{
+    animation-name: fromBottom;
+    animation-duration: 1.5s;
+    opacity: 1 !important;
+}
+.fadeInLeft{
+    animation-name: fromRight;
+    animation-duration: 1.5s;
+    opacity: 1 !important;
+}
+.fadeInRight{
+    animation-name: fromLeft;
+    animation-duration: 1.5s;
+    opacity: 1 !important;
+}
+.fadeIn{
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    opacity: 1 !important;
+}
+/*media queries*/
+@media only screen and (max-width:1500px){
+    .landingHero h2{
+        transform: translate(200px,-40px);
+    }
+}
+@media only screen and (max-width:1200px){
+    .landingHero h2{
+        transform: translate(100px,-40px);
+    }
+    .navBar{
+        margin-left: 100px;
+    }
+    header button{
+        transform: translate(100px,250px);
+    }
+}
+@media only screen and (max-width:992px){
     .portfolioPages ul li{
         display: inline-block;
         text-align: center;
@@ -152,18 +302,60 @@ header button{
         list-style: none;
         display: inline;
     }
+    .landingHero h2{
+        transform: translate(50px,-20px);
+        font-size: 1.5rem;
+    }
+    .navBar{
+        margin-left: 50px;
+    }
+    .navBarItems{
+        padding:1rem 0.5rem;
+    }
+    .navBarItems a{
+        font-size: 0.7rem;
+    }
+    header button{
+        transform: translate(50px,150px);
+        padding:0.5rem 5rem;
+    }
 }
 /*for landscpae tablets*/
-@media only screen and (max-width: 768px) {
-    header button{
-        transform : translate(0,150px);
-    }
+@media only screen and (max-width: 768px) {   
     .portfolioPages ul li{
         display:block;
         width:100%;
     }
     .portfolioPages ul {
         margin-top: 1rem;
+    }
+    .landingHero h2{
+        transform: translate(50px,-20px);
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .landingHero button{
+        font-size: 0.8rem;
+    }
+    .navBar{
+        margin-left: 10px;
+    }
+    .content h2{
+        font-size: 1.5rem;
+    }
+    .content p{
+        font-size:  1rem;
+    }
+    .glimpse{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .glimpse:last-child{
+        flex-direction: column-reverse;
+    }
+    .glimpseImage,.content {
+        width: 100%;
+        margin:0 auto;
     }
 }
 /* for portrait tablets and large phones*/
@@ -177,6 +369,15 @@ header button{
     }
     #hamburger{
         display: block;
+    }
+    .landingHero h2{
+        display:none;
+    }
+    .landingHero button{
+        background-color: white;
+        color: black;
+        transform: translate(150px,400px);
+        padding: 1rem 5rem;
     }
 }
 /* for small phones*/
@@ -196,6 +397,10 @@ header button{
         width: 75%;
         height: auto;
     }
+    .landingHero button{
+        transform: translate(100px,200px); 
+        padding: 0.5rem 3rem;
+    }
 }
 /* for smaller phones*/
 @media only screen and (max-width:350px) {
@@ -213,5 +418,9 @@ header button{
     .portfolioPages ul li img{
         width: 50%;
         height: auto;
+    }
+    .landingHero button{
+        transform: translate(80px,100px); 
+        padding: 0.2rem 2rem;
     }
 }

@@ -10,11 +10,11 @@ function toggleMenu(){
             mobileNavBar.style.display = "none";
         });
         //change the icon abck to hamburger on closing the menu 
-        $("#hamburger").attr('src','../icons/hamburger.png')
+        document.getElementById("hamburger").src ="../icons/hamburger.png";
     }
     else{
         //change the icon of the menu toggler
-        $("#hamburger").attr('src','../icons/close.png')
+        document.getElementById("hamburger").src ="../icons/close.png";
         mobileNavBar.style.display = "block"
         $("#mobileNavBar").animate({
            opacity : "1"
@@ -31,11 +31,15 @@ function checkDeviceWidth(width) {
   if (width.matches) { // If media query matches
     document.getElementById("mobileNav").style.display = "block";
     document.getElementById("mobileNavBar").style.display = "none";
+    document.getElementById("heroImage").src = "../images/heroSectionLandingMobile.jpg"; 
+    document.getElementById("hamburger").src ="../icons/hamburger.png";
   } else {
     document.getElementById("mobileNav").style.display = "none";
     document.getElementById("mobileNavBar").style.display = "none";
+    document.getElementById("heroImage").src = "../images/heroSectionLanding.jpg";  
   }
 }
+
 
 var width = window.matchMedia("(max-width: 600px)")
 checkDeviceWidth(width) // Call listener function at run time

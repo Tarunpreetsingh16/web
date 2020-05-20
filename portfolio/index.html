@@ -18,15 +18,17 @@
         header of the page
         -->
     <header class="landingHero">
-        <nav>
-            <ul class="navBar">
-                <li class="navBarItems"><a href="index.html">Home</a></li> 
-                <li class="navBarItems"><a href="#">Projects</a></li> 
-                <li class="navBarItems"><a href="#">Skills</a></li> 
-                <li class="navBarItems"><a href="#">About</a></li> 
-                <li class="navBarItems"><a href="#">Connect</a></li> 
-            </ul>
-        </nav>  
+        <div id="desktopNav">
+            <nav>
+                <ul class="navBar">
+                    <li class="navBarItems"><a href="index.html">Home</a></li> 
+                    <li class="navBarItems"><a href="#">Projects</a></li> 
+                    <li class="navBarItems"><a href="#">Skills</a></li> 
+                    <li class="navBarItems"><a href="#">About</a></li> 
+                    <li class="navBarItems"><a href="#">Connect</a></li> 
+                </ul>
+            </nav>  
+        </div>
         <div id="mobileNav">
             <nav>
                 <ul id="mobileNavBar">
@@ -38,29 +40,56 @@
                 </ul>
             </nav>
             <img id="hamburger" src="icons/hamburger.png" onclick="toggleMenu()">
-        </div>
-        <img id="heroImage" src="images/heroSectionLanding.png">
+        </div>        
+        <img id="heroImage" src="images/heroSectionLanding.jpg">
+        <h2>jack of all trades<br> master of none !</h2>
         <button>FIND OUT</button>
     </header>   
     <main>
         <section class="portfolioPages">
             <ul>
-                <li>        
+                <li class="animated">        
                     <h3><a href="#">Projects</a></h3>                        
                     <a href="#"><img src="images/projects.png"></a>
                     <p><a href="#">Explore the projects created, something<br> new comes on the regular basis!</a></p>
                 </li>
-                <li>
+                <li class="animated">
                     <h3><a href="#">Skills</a></h3>
                     <a href="#"><img src="images/skills.png"></a>
                     <p><a href="#">Look at them before anything changes, <br>can change very quickly!</a></p>
                 </li>
-                <li>
+                <li class="animated">
                     <h3>Experience <a href="#"></a></h3> 
                     <a href="#"><img src="images/experience.png"></a>
                     <p><a href="#">Short but enlightening time spent as <br>a professional</a></p>
                 </li>
             </ul>
+        </section>
+        <section id="glimpseSection">
+            <h2 id="sectionTitle">glimpse</h2>
+            <div class="glimpse glimpse1">
+                <div class="glimpseImage">
+                    <img src="images/cycle.png">
+                </div>
+                <div class="content">
+                    <h2>ReCycle</h2>
+                    <p>Login page for an application
+                    to rent, buy or sell bicycles.
+                    Design created using Adobe
+                    Photoshop.</p>
+                </div>
+            </div>
+            <div class="glimpse glimpse2">
+                <div class="glimpseImage">
+                    <img src="images/asus.png">
+                </div>
+                <div class="content">
+                    <h2>AppCom</h2>
+                    <p>A product page designed in
+                    Adobe Photoshop for an
+                    ecommerce application.</p>
+                </div>
+            </div>
         </section>
       </main>
     <!-- Optional JavaScript -->
@@ -70,5 +99,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.js"></script>
   </body>
 </html>
