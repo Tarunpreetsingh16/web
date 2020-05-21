@@ -60,10 +60,7 @@ nav{
     transform: scale(1,1.2) translate(200px,-80px);
     
 }
-header button{
-    position: absolute;
-    left: 0;
-    transform: translate(200px,250px);
+.buttonTraits{
     background-color: black;
     padding:0.8rem 8rem;
     border-radius:5px;
@@ -71,6 +68,12 @@ header button{
     border:none;
     font-size: 1rem;
     letter-spacing: 0.2rem;
+    text-transform: uppercase
+}
+header button{
+    position: absolute;
+    left: 0;
+    transform: translate(200px,250px);
 }
 .portfolioPages{
     display: flex;
@@ -135,7 +138,7 @@ header button{
     opacity: 0;
 }
 /********css for glimpse part of the homepage**********/
-#sectionTitle{
+.sectionTitle{
     margin: 3rem 0;
     text-transform: uppercase;
     text-align: center;
@@ -153,7 +156,7 @@ header button{
     align-content: center;
     
 }
-.glimpse:last-child{
+.glimpse:nth-child(odd){
     flex-direction: row-reverse;
 }
 .glimpseImage{
@@ -165,7 +168,9 @@ header button{
 }
 .glimpseImage img{
     transform: scale(0.8);
+    transition: 0.5s all ease-in;
     opacity:0;
+    box-shadow: 0.5rem 0.5rem 5rem black;
 }
 .content{
     text-align: center;
@@ -175,6 +180,7 @@ header button{
     flex-direction: column;
     justify-content: center;
     opacity: 0;
+    transition:0.5s all;
 }
 .content p{
     width:50%;
@@ -184,10 +190,70 @@ header button{
 .content h2{
     font-size: 2rem;
 }
+#glimpseSection{
+    text-align: center;
+}
+#glimpseSection button{
+    margin: 2rem 0;
+    padding:1rem 3rem;
+    background-color: white;
+    color :black;
+    border :2px solid black;
+    transition: 0.4s all ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+#glimpseSection button::before,
+#glimpseSection button::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: 0.6s;
+    opacity: 0.1;
+}
+#glimpseSection button::before{
+}
+#glimpseSection button:before{
+    width: 60px;
+    transform: skew(-45deg);
+    background-color: rgba(0,0,0,1);
+}
+#glimpseSection button:hover:before{
+    opacity: 0.4;
+    background-color: rgba(255,255,255,1);
+    transform: translateX(320px) skew(-45deg);
+}
+#glimpseSection button:hover{
+    background:#03a9f4;
+    color: white;
+}
+/****gallery section of home page*****/
+.rowFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.rowFlex img{
+    transition: all 1s;
+}
+.rowFlex img:hover{
+    transform: scale(1.1);
+}
+#gallerySection img{
+    box-shadow: 0.2rem 0.2rem 1rem black;
+}
+#galleryFirstRow img{
+    height:600px;
+    width:auto;
+    margin: 3rem;
+    padding:2rem;
+}
 /***animations****/
 @keyframes fromLeft{
     0%{
-        transform: translateX(-1000px);
+        transform: translateX(-15%);
         opacity:0;
     }
     100%{
@@ -197,7 +263,7 @@ header button{
 }
 @keyframes fromRight{
     0%{
-        transform: translateX(+1000px);
+        transform: translateX(+15%);
         opacity:0;
     }
     100%{
@@ -207,7 +273,7 @@ header button{
 }
 @keyframes fromBottom{
     0%{
-        transform: translateY(+100px);
+        transform: translateY(+20%);
         opacity:0;
     }
     100%{
@@ -236,11 +302,13 @@ header button{
     animation-name: fromRight;
     animation-duration: 1.5s;
     opacity: 1 !important;
+    transform: translateX(0px) !important;
 }
 .fadeInRight{
     animation-name: fromLeft;
     animation-duration: 1.5s;
     opacity: 1 !important;
+    transform: translateX(0px) !important;
 }
 .fadeIn{
     animation-name: fadeIn;
@@ -251,6 +319,12 @@ header button{
 @media only screen and (max-width:1500px){
     .landingHero h2{
         transform: translate(200px,-40px);
+    }
+    #galleryFirstRow img{
+        height:400px;
+        width:auto;
+        margin: 2rem;
+        padding:1rem;
     }
 }
 @media only screen and (max-width:1200px){
@@ -319,6 +393,24 @@ header button{
         transform: translate(50px,150px);
         padding:0.5rem 5rem;
     }
+    #galleryFirstRow img{
+        height:300px;
+        width:auto;
+        margin: 2rem;
+        padding:1rem;
+    }
+    .sectionTitle{
+        font-size:  1.5rem;
+    }
+    .glimpseImage img{
+        width: 300px;
+    }
+    .content h2{
+        font-size: 1.5rem;
+    }
+    .content p{
+        font-size: 1rem;
+    }
 }
 /*for landscpae tablets*/
 @media only screen and (max-width: 768px) {   
@@ -350,12 +442,31 @@ header button{
         flex-direction: column-reverse;
         justify-content: center;
     }
-    .glimpse:last-child{
+    .glimpseImage img{
+        height:auto;
+        width: 300px;
+    }
+    .glimpse:nth-child(odd){
         flex-direction: column-reverse;
     }
     .glimpseImage,.content {
         width: 100%;
         margin:0 auto;
+    }
+    .rowFlex{
+        flex-direction: column-reverse;
+    }
+    #galleryFirstRow img{
+        height:450px;
+        width:250px;
+        margin: 2rem auto;
+        padding:1rem;
+    }
+    .sectionTitle{
+        font-size: 1.3rem;
+    }
+    .content h2{
+        font-size: 1.2rem;
     }
 }
 /* for portrait tablets and large phones*/
@@ -400,6 +511,12 @@ header button{
     .landingHero button{
         transform: translate(100px,200px); 
         padding: 0.5rem 3rem;
+    }
+    #galleryFirstRow img{
+        height:300px;
+        width:200px;
+        margin: 2rem auto;
+        padding:1rem;
     }
 }
 /* for smaller phones*/
