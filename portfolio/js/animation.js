@@ -63,5 +63,3 @@ var scene = new ScrollMagic.Scene({
 })
 .setClassToggle('.glimpse3 .content','fadeInLeft')
 .addTo(controller);
-
-
