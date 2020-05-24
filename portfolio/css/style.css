@@ -13,6 +13,33 @@ header{
     justify-content: center;
     align-items: center;
 }
+#floatingButton{
+    position: fixed;
+    bottom: 20px;
+    right:20px;   
+    z-index: 1;
+    height:64px;
+    width:64px;
+    overflow: hidden;
+    transition: 1s all;
+    border-radius: 50%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transform
+}
+#floatingButton:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+#floatingButton img{
+    transform: rotate(-90deg);
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+}
 .landingHero{
     width: 100%;
     height:auto;
@@ -142,11 +169,15 @@ header button{
     margin: 3rem 0;
     text-transform: uppercase;
     text-align: center;
-    opacity:1; /*0 changes*/
+    opacity:0; /*0 changes*/
     transition:1s all ease-in;
     background-color: black;
     padding: 1rem;
     color: white;
+}
+#glimpseSection .sectionTitle{
+    background-color: white;
+    color : black;
 }
 .glimpse{
     height: auto;
@@ -273,6 +304,8 @@ header button{
     width:100%;
     justify-content: center;
     margin:2rem auto;
+    transition:1s all;
+    opacity:0;
 }
 .testimonialImage{
     text-align: center;
@@ -292,7 +325,7 @@ header button{
     margin:0 5rem;
     display:none;/*flex*/
     flex-direction: column;
-    transition: 1s all;
+    transition: 1.5s all;
 }
 .testimonialBlock h3{
     color: #9e9e9e;
@@ -357,7 +390,188 @@ header button{
     top: 50%;
     right: 10px;
 }
+/****explore section css below this ***/
+#exploreSection h2{
+    background-color: white;
+    color:black;
+}
+#exploreSection{
+    margin: 4rem auto;
+    padding-bottom:1rem;
+}
+#exploreSection div{
+    text-align: center;
+    margin: 0 auto;
+}
+.exploreButtons{
+    margin: 1rem 2rem 5rem 2rem;
+    width:250px;
+    height:50px;
+    letter-spacing: 0.2rem;
+    background-color: white;
+    border:0;
+    text-transform: uppercase;
+    position: relative;
+    background-image:linear-gradient(-90deg,rgba(212,243,239,1),rgba(171,240,233,1));
+}
+.exploreButtons:hover{
+     background-image:linear-gradient(-90deg,rgba(171,240,233,1),rgba(212,243,239,1));
+}
+.exploreButtons::before{
+    content: '';
+    height:20px;
+    width: 20px;
+    background-color: black;
+    position: absolute;
+    top:-1px;
+    left:0px;
+    z-index: -1;
+}
+.exploreButtons::after{
+    content: '';
+    height:20px;
+    width: 20px;
+    background-color: black;
+    position: absolute;
+    top:0px;
+    left:-1px;
+    z-index: -1;
+}
+.exploreButtons:hover:before{
+    animation-name: moveTopRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.exploreButtons:hover:after{
+    animation-name: moveBottomRight;
+    animation-duration:1s;
+    animation-fill-mode: forwards;
+}
+/*
+.exploreButtons::before{
+    content:'';
+    height:10px;
+    width:10px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    background-color: white;
+    transition: 2s all;
+    opacity: 0;
+}
+.exploreButtons::after{
+    content:'';
+    height:10px;
+    width:10px;
+    position: absolute;
+    bottom: 0px;
+    opacity: 0;
+    left: -1px;
+    background-color: black;
+    transition: 1s all;
+}
+.exploreButtons:hover:before{
+    opacity: 1;
+    animation-name: pseudoRandomMovementSecond;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.exploreButtons:hover:after{
+    opacity: 1;
+    animation-name: pseudoRandomMovementOne;
+    animation-duration: s;
+    animation-iteration-count: infinite; 
+}
+*/
+/*
+.exploreButtons::after{
+    content:'';
+    height:100%;
+    width:10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: black;
+}
+*/
 /***animations****/
+@keyframes moveTopRight{
+    50%{
+        transform: translate(231px,0px);
+    }
+    100%{
+        transform: translate(231px,31px);
+    }
+}
+@keyframes moveBottomRight{
+    50%{
+        transform: translate(0px,31px);
+    }
+    100%{
+        transform: translate(231px,31px);
+    }
+}
+/* 
+@keyframes pseudoRandomMovementOne{
+    10%{
+        transform: translate(10px,-25px) rotate(45deg);
+    }
+    20%{
+        transform: translate(25px,-20px)  rotate(90deg);
+    }
+    30%{
+        transform: translate(50px,-30px) rotate(135deg);
+    }
+    40%{
+        transform: translate(85px,-40px) rotate(180deg);
+    }
+    50%{
+        transform: translate(125px,-20px) rotate(0deg);
+    }
+    60%{
+        transform: translate(165px,-25px) rotate(45deg);
+    }
+    70%{
+        transform: translate(200px,-20px) rotate(90deg);
+    }
+    80%{
+        transform: translate(225px,-40px) rotate(135deg);
+    }
+    100%{
+        transform: translate(260px,-55px) rotate(0deg);
+    }
+}
+@keyframes pseudoRandomMovementSecond{
+    10%{
+        transform: translate(5px,40px) rotate(45deg);
+    }
+    20%{
+        transform: translate(25px,10px)  rotate(90deg);
+    }
+    30%{
+        transform: translate(50px,40px) rotate(135deg);
+    }
+    40%{
+        transform: translate(85px,35px) rotate(180deg);
+    }
+    50%{
+        transform: translate(125px,20px) rotate(0deg);
+    }
+    60%{
+        transform: translate(165px,5px) rotate(45deg);
+    }
+    70%{
+        transform: translate(200px,20px) rotate(90deg);
+    }
+    80%{
+        transform: translate(225px,40px) rotate(135deg);
+    }
+    100%{
+        transform: translate(260px,55px) rotate(0deg);
+    }
+}
+*/
 @keyframes fromLeft{
     0%{
         transform: translateX(-15%);
@@ -404,25 +618,52 @@ header button{
         opacity:0;
     }
 }
+@keyframes translateUp{
+    0%{
+        transform: translateY(-10px);
+    }
+    20%{
+        transform: translateY(-6px);
+    }
+    40%{
+        transform:translateY(-3px);
+    }
+    50%{
+        transform:translateY(0);
+    }
+    60%{
+        transform: translateY(4px);
+    }
+    80%{
+        transform: translateY(8px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(0);
+    }
+    
+}
 /*******Animation for scrollmagic ***********/
-.showTitle{
+.show{
     opacity:1 !important;
 }
 .fadeInUp{
     animation-name: fromBottom;
     animation-duration: 1.5s;
-    opacity: 1 !important;
+    animation-fill-mode: forwards;
 }
 .fadeInLeft{
     animation-name: fromRight;
     animation-duration: 1.5s;
-    opacity: 1 !important;
+    animation-fill-mode: forwards;
     transform: translateX(0px) !important;
 }
 .fadeInRight{
     animation-name: fromLeft;
     animation-duration: 1.5s;
-    opacity: 1 !important;
+    animation-fill-mode: forwards;;
     transform: translateX(0px) !important;
 }
 .fadeIn{
@@ -432,17 +673,12 @@ header button{
 }
 .fadeOutSlide{
     animation-name:fadeOut;
-    animation-duration: 0.5s;
     display: none !important;
 }
 .fadeInSlide{
     animation-name: fadeIn;
-    animation-duration: 1.5s;
-    display: block !important;
-}
-.slide{
-    animation-name: slide;
     animation-duration: 2s;
+    display: block !important;
 }
 /*media queries*/
 @media only screen and (max-width:1500px){
@@ -616,6 +852,14 @@ header button{
     }
     .content h2{
         font-size: 1.2rem;
+    }
+    #floatingButton{
+        height:32px;
+        width:32px;
+    }
+    #floatingButton img{
+        height:16px;
+        width:16px;
     }
 }
 /* for portrait tablets and large phones*/

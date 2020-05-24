@@ -3,7 +3,7 @@ var scene = new ScrollMagic.Scene({
     offset: -250,
     triggerElement:'#glimpseSection h2',
 })
-.setClassToggle('#glimpseSection h2','showTitle')
+.setClassToggle('#glimpseSection h2','show')
 .addTo(controller);
 
 var controller = new ScrollMagic.Controller();
@@ -11,7 +11,24 @@ var scene = new ScrollMagic.Scene({
     offset: -250,
     triggerElement:'#gallerySection h2',
 })
-.setClassToggle('#gallerySection h2','showTitle')
+.setClassToggle('#gallerySection h2','show')
+.addTo(controller);
+
+var controller = new ScrollMagic.Controller();
+var scene = new ScrollMagic.Scene({    
+    offset: -250,
+    triggerElement:'#testimonialsSection h2',
+})
+.setClassToggle('#testimonialsSection h2','show')
+.addTo(controller);
+
+
+var controller = new ScrollMagic.Controller();
+var scene = new ScrollMagic.Scene({    
+    offset: -250,
+    triggerElement:'#exploreSection h2',
+})
+.setClassToggle('#exploreSection h2','show')
 .addTo(controller);
 
 var scene = new ScrollMagic.Scene({  
@@ -62,4 +79,20 @@ var scene = new ScrollMagic.Scene({
     triggerElement:".glimpse3 .content"
 })
 .setClassToggle('.glimpse3 .content','fadeInLeft')
+.addTo(controller);
+
+var controller = new ScrollMagic.Controller();
+var scene = new ScrollMagic.Scene({    
+    offset: -250,
+    triggerElement:'.testimonial',
+})
+.setClassToggle('.testimonial','show')
+.addTo(controller);
+
+var controller = new ScrollMagic.Controller();
+var scene = new ScrollMagic.Scene({    
+    offset: -250,
+    triggerElement:'#glimpseSection',
+})
+.setClassToggle('#floatingButton','show')
 .addTo(controller);
