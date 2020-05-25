@@ -9,26 +9,17 @@ var scene = new ScrollMagic.Scene({
 var controller = new ScrollMagic.Controller();
 var scene = new ScrollMagic.Scene({    
     offset: -250,
-    triggerElement:'#gallerySection h2',
-})
-.setClassToggle('#gallerySection h2','show')
-.addTo(controller);
-
-var controller = new ScrollMagic.Controller();
-var scene = new ScrollMagic.Scene({    
-    offset: -250,
     triggerElement:'#testimonialsSection h2',
 })
 .setClassToggle('#testimonialsSection h2','show')
 .addTo(controller);
 
-
 var controller = new ScrollMagic.Controller();
 var scene = new ScrollMagic.Scene({    
     offset: -250,
-    triggerElement:'#exploreSection h2',
+    triggerElement:'#skillsSection h2',
 })
-.setClassToggle('#exploreSection h2','show')
+.setClassToggle('#skillsSection h2','show')
 .addTo(controller);
 
 var scene = new ScrollMagic.Scene({  
@@ -60,7 +51,7 @@ var scene = new ScrollMagic.Scene({
 .addTo(controller);
 
 var scene = new ScrollMagic.Scene({  
-    triggerElement:".glimpse1 .content",
+    triggerElement:".glimpse1 .contenft",
     offset:-200,
 })
 .setClassToggle('.glimpse1 .content','fadeInLeft')
