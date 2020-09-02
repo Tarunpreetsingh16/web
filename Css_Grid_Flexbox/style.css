@@ -8,6 +8,8 @@ nav{
     background-color: aquamarine;
     font-size: 5rem;
     padding:1rem;
+    position: fixed;
+    width: 100%;
 }
 nav  ul{
     display: flex;
@@ -38,7 +40,7 @@ nav ul li:last-child{
 }
 #projectsSection ul{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
     justify-content: center;
     grid-gap: 5rem;
 }
@@ -47,12 +49,21 @@ nav ul li:last-child{
     margin :0 auto;
 }
 #projects li{
-    height:20rem;
+    height:25rem;
     margin:0 auto;
+    width:25rem;
     background-color: black;
     color:white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+}
+#footerSection
+{
+    width: 100%;
+    background-color: yellow;
+    padding:2rem;
+    text-align: center;
+    font-size: 4rem;
 }
