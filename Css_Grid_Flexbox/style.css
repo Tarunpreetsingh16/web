@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: aquamarine;
+    font-size: 5rem;
+    padding:1rem;
+}
+nav  ul{
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul li{
+    list-style: none;
+    margin:1rem;
+}
+nav ul li:last-child{
+    flex: auto;
+    text-align: right;
+}
+#coverSection{
+    height:50vh;
+    width: auto;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cover{
+    font-size: 2rem;
+    color:white;
+}
+#projectsSection{
+    padding:5rem 0;
+}
+#projectsSection ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    justify-content: center;
+    grid-gap: 5rem;
+}
+#projects{
+    width:80%;
+    margin :0 auto;
+}
+#projects li{
+    height:20rem;
+    margin:0 auto;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
