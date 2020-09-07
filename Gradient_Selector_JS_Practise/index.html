@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
@@ -12,7 +12,18 @@
     <body>
         <section id="mainSection">
             <h1>Gradiant Background Generator</h1>
-            
+            <h2>Select Colors</h2>
+            <div id="selectionBox">
+                <div id="leftBox">
+                    <h3>Left</h3>
+                    <input type="color" id="leftColor" value="#d57f8c">
+                </div>
+                <div id="rightBox">
+                    <h3>Right</h3>
+                    <input type="color" id="rightColor" value="#00d4ff">
+                </div>
+            </div>
         </section>
+        <script src="main.js"></script>
     </body>
 </html>
